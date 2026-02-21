@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from './config/config.module';
+import { ConfigModule } from '@nestjs/config';
+
 import { DatabaseModule } from './database/database.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
@@ -9,7 +10,10 @@ import { BeneficiaryItemsModule } from './beneficiary-items/beneficiary-items.mo
 
 @Module({
   imports: [
-    ConfigModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
     DatabaseModule,
     UsersModule,
     BeneficiariesModule,
@@ -18,5 +22,6 @@ import { BeneficiaryItemsModule } from './beneficiary-items/beneficiary-items.mo
     BeneficiaryItemsModule,
   ],
 })
+
 export class AppModule {}
 

@@ -986,10 +986,10 @@ The MVP is complete when:
 Create a /docs/definition-of-done.md based on the information in @readme.md 
 
 
+---
 
-=======================================================================
 *Generación de Backend*
-#Backend implementation
+# Backend implementation
 Act as a Senior Backend developer expert in NestJS and, based in @user-stories.md, and in @definition-of-done.md, start implementing:
 
 - Project structure (NestJS)
@@ -1000,13 +1000,13 @@ Act as a Senior Backend developer expert in NestJS and, based in @user-stories.m
 
 Ask any questions you may have so that you can accomplish implementing Backend architecture blueprint + database schema implementation plan.
 
-##Update Memory Bank
+## Update Memory Bank
 update any files necessary in /docs
 
+---
 
-=======================================================================
 *Generación de Frontend*
-#Fronted implementation
+# Fronted implementation
 Act as a Senior Frontend developer expert in NestJS and, based in @user-stories.md, and in @definition-of-done.md, start implementing:
 
 - React app structure
@@ -1016,5 +1016,64 @@ Act as a Senior Frontend developer expert in NestJS and, based in @user-stories.
 
 Ask any questions you may have so that you can accomplish implementing Frontend.
 
-##Update Memory Bank
+## Update Memory Bank
 update any files necessary in /docs
+
+---
+
+## Project Debugging Prompts Timeline
+
+“ok, lets go back to creating the product.”
+→ Restarted focus on building/running the cloned GitHub project.
+
+“ok, I have done the steps, npm install on backend, npm start on frontend, now what?”
+→ Asked what to do after installing dependencies and starting frontend.
+
+“wait, how do I need to also run the backend or something?”
+→ Realized frontend alone wasn’t enough; needed backend running too.
+
+“how do I validate backend and services are running?”
+→ Wanted a professional way to verify backend status.
+
+“here's an error in backend:”
+→ Started troubleshooting runtime errors.
+
+Posted error:
+
+JwtStrategy requires a secret or key
+
+→ JWT configuration issue.
+
+Shared .env + app.module.ts and asked:
+“let me know if I need to update something”
+→ Investigated config loading.
+
+Shared auth.module.ts + jwt.strategy.ts
+→ Deep dive into JWT + ConfigService setup.
+
+Posted new logs after changes
+→ Confirmed JWT still failing.
+
+Posted logs showing JWT fixed but new error:
+
+Unable to connect to the database. ECONNREFUSED
+
+→ Database connection issue surfaced.
+
+Ran psql --version and showed it wasn’t installed
+→ Confirmed PostgreSQL not present locally.
+
+Tried Docker and got engine error
+→ Docker installed but not running.
+
+“ok, it is running, now what?”
+→ After Docker Desktop started.
+
+“how to run frontend”
+→ Switched focus back to frontend startup.
+
+Current prompt:
+“make a list of the prompts I have done since we started debugging the github project”
+
+---
+

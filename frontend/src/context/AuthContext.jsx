@@ -63,6 +63,9 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+
+
+  /*
   const register = async (registrationData) => {
     try {
       const response = await authAPI.register(registrationData);
@@ -90,6 +93,51 @@ export const AuthProvider = ({ children }) => {
       };
     }
   };
+*/
+const register = async (registrationData) => {
+  try {
+    // Build correct backend structure
+    const formattedData = {
+      user: {
+        full_name: registrationData.userFullName,
+        email: registrationData.userEmail,
+        password: registrationData.userPassword,
+      },
+      beneficiary: {
+        full_name: registrationData.beneficiaryFullName,
+        email: registrationData.beneficiaryEmail,
+        password: registrationData.beneficiaryPassword,
+      },
+    };
+
+    const response = await authAPI.register(formattedData);
+
+    // Login after registration
+    const loginResponse = await authAPI.login(
+      registrationData.userEmail,
+      registrationData.userPassword
+    );
+
+    const { token: newToken, role: userRole, user: userData } = loginResponse;
+
+    setToken(newToken);
+    setRole(userRole);
+    setUser(userData);
+
+    localStorage.setItem('token', newToken);
+    localStorage.setItem('user', JSON.stringify(userData));
+
+    return { success: true, data: response };
+  } catch (error) {
+    return {
+      success: false,
+      error:
+        error.response?.data?.message ||
+        'Registration failed. Please try again.',
+    };
+  }
+};
+
 
   const logout = () => {
     setToken(null);
