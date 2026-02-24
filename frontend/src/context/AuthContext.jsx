@@ -96,20 +96,15 @@ export const AuthProvider = ({ children }) => {
 */
 const register = async (registrationData) => {
   try {
-    // Build correct backend structure
+    // Build backend DTO shape expected by RegisterDto
     const formattedData = {
-      user: {
-        full_name: registrationData.userFullName,
-        email: registrationData.userEmail,
-        password: registrationData.userPassword,
-      },
-      beneficiary: {
-        full_name: registrationData.beneficiaryFullName,
-        email: registrationData.beneficiaryEmail,
-        password: registrationData.beneficiaryPassword,
-      },
+      userFullName: registrationData.userFullName,
+      userEmail: registrationData.userEmail,
+      userPassword: registrationData.userPassword,
+      beneficiaryFullName: registrationData.beneficiaryFullName,
+      beneficiaryEmail: registrationData.beneficiaryEmail,
+      beneficiaryPassword: registrationData.beneficiaryPassword,
     };
-
     const response = await authAPI.register(formattedData);
 
     // Login after registration

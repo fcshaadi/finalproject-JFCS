@@ -7,6 +7,50 @@
   gap: 16px;
 }
 
+.beneficiary-section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.beneficiary-section h3 {
+  margin: 0 0 12px;
+}
+
+.beneficiary-status {
+  color: #4b5563;
+}
+
+.beneficiary-form .form-group {
+  margin-bottom: 12px;
+}
+
+.beneficiary-form .form-group label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.beneficiary-form .form-group input {
+  width: 100%;
+}
+
+.beneficiary-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.success-message {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
 @media (max-width: 768px) {
   .dashboard-header {
     flex-direction: column;
@@ -14,6 +58,10 @@
   }
 
   .dashboard-header .btn {
+    width: 100%;
+  }
+
+  .beneficiary-actions .btn {
     width: 100%;
   }
 }

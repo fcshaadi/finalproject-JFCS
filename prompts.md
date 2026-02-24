@@ -1077,3 +1077,10 @@ Current prompt:
 
 ---
 
+Analyze the project and validate that the Backend and Frontend are alligned. Don't forget to validate endpoints. Do not answer me anything other than a list of incongruencies you find.
+
+Fix the issues you found.
+
+---
+
+

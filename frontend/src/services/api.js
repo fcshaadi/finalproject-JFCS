@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -94,6 +94,21 @@ export const itemsAPI = {
 export const beneficiaryAPI = {
   getItems: async () => {
     const response = await api.get('/beneficiary/items');
+    return response.data;
+  },
+
+  getMyProfile: async () => {
+    const response = await api.get('/beneficiaries/me');
+    return response.data;
+  },
+
+  updateMyProfile: async (data) => {
+    const response = await api.patch('/beneficiaries/me', data);
+    return response.data;
+  },
+
+  unlinkMyProfile: async () => {
+    const response = await api.delete('/beneficiaries/me');
     return response.data;
   },
 };
