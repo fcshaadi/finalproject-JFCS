@@ -27,12 +27,11 @@ MVP de una aplicación web que proporciona un lugar seguro para que las personas
 
 ### **0.4. URL del proyecto:**
 
-[Pendiente de completar - URL del proyecto desplegado en Hetzner]
+http://91.98.20.172
 
 ### 0.5. URL o archivo comprimido del repositorio
 
-[Pendiente de completar - URL del repositorio o archivo comprimido]
-
+https://github.com/fcshaadi/finalproject-JFCS
 ---
 
 ## 1. Descripción general del producto
